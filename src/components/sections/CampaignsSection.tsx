@@ -95,7 +95,7 @@ const CAMPAIGNS: { file: string; aspect: number; label: string }[] = [
   { file: "ok/300x600-backup.gif",                                                                             aspect: 0.5, label: "Ouigo" },
 ];
 
-const N = CAMPAIGNS.length; // 31
+const N = CAMPAIGNS.length; // 84
 
 // Split campaigns across 3 rows by index modulo
 const ROW_CAMPAIGNS = [
@@ -108,7 +108,7 @@ const ROW_CAMPAIGNS = [
 const ROW_CONFIG = [
   { y: 0,  z: 0,   speed: 3.4, xSpacing: 10.0 },
   { y: 2,    z: -6,  speed: 2.5, xSpacing: 9 },
-  { y: 4, z: -12, speed: 1.8, xSpacing: 8.5 },
+  { y: 4, z: -12, speed: 1.8, xSpacing: 8 },
 ] as const;
 
 // ─── Banner mesh ──────────────────────────────────────────────────────────────

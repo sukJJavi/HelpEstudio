@@ -9,37 +9,90 @@ import * as THREE from "three";
 // ─── Data ────────────────────────────────────────────────────────────────────
 
 const CAMPAIGNS: { file: string; aspect: number; label: string }[] = [
-  { file: "300x600-paradores.jpg",              aspect: 0.5,    label: "Paradores" },
-  { file: "Ouigo-BusinessSur-1080x1920.jpg",    aspect: 0.5625, label: "Ouigo" },
-  { file: "300x600-movistaer.jpg",              aspect: 0.5,    label: "Movistar" },
-  { file: "300x600-finetwork-convergente-0226.png", aspect: 0.5, label: "Finetwork" },
-  { file: "300x600-generalopticas.jpg",         aspect: 0.5,    label: "General Óptica" },
-  { file: "peugeot508sw-540x540-inread-ppaa.jpg", aspect: 1,    label: "Peugeot" },
-  { file: "Citroen-REDDAYS-041025-300x600.gif", aspect: 0.5,    label: "Citroën" },
-  { file: "300x600-sanitas-amazon.jpg",         aspect: 0.5,    label: "Sanitas" },
-  { file: "summerDrive-1024x1024-smartclip-wall.jpg", aspect: 1, label: "Peugeot" },
-  { file: "300x600pfizer.jpg",                  aspect: 0.5,    label: "Pfizer" },
-  { file: "paradores-blackfriday2025-300x600.gif", aspect: 0.5, label: "Paradores BF" },
-  { file: "paradores-cybermonday2025-300x600.gif", aspect: 0.5, label: "Paradores CM" },
-  { file: "randstad-chica-300x250.gif",         aspect: 1.2,    label: "Randstad" },
-  { file: "randstad-chico-300x250.gif",         aspect: 1.2,    label: "Randstad" },
-  { file: "1080x1080-Ouigo-Navidad25.jpg",      aspect: 1,      label: "Ouigo Navidad" },
-  { file: "ES_EST_SANITAS_SEGUROS-SALUD_CAMBIATE24_ACCEDEYAVANZA_20241001_DOBLEROBAPAGINAS_300X600.jpg", aspect: 0.5, label: "Sanitas 24" },
-  { file: "ES_EST_SANITAS_SEGUROS-SALUD_CAMBIATE25_CHICO_1440x2560.jpg", aspect: 0.5625, label: "Sanitas 25" },
-  { file: "300x600-paradoresweej.jpg",          aspect: 0.5,    label: "Paradores Week" },
-  { file: "1440x2560-Citroen-EC3-Nov2025-1.jpg", aspect: 0.5625, label: "Citroën EC3" },
-  { file: "1440x2560-Citroen-EC3-Nov2025-3.jpg", aspect: 0.5625, label: "Citroën EC3" },
-  { file: "Citroen-REDDAYS-041025-1080x1920.jpg", aspect: 0.5625, label: "Citroën Red Days" },
-  { file: "300x250_santander.gif",              aspect: 1.2,    label: "Santander" },
-  { file: "300x600-backup.gif",                 aspect: 0.5,    label: "Ouigo" },
-  { file: "300x600-finetwork-convergente-0226.gif", aspect: 0.5, label: "Finetwork" },
-  { file: "320x480-paradores-veraneadores-30kb.jpg", aspect: 0.667, label: "Paradores Verano" },
-  { file: "650x650.jpg",                        aspect: 1,      label: "Take2 - W2K20" },
-  { file: "back-up_300x600.jpg",                aspect: 0.5,    label: "Movistar La Liga" },
-  { file: "bg001.jpg",                          aspect: 1,      label: "Paradores Week" },
-  { file: "carrefest2019-630x920.jpg",          aspect: 0.685,  label: "Carrefour" },
-  { file: "peugeotProf-4dias-664x850-ogury.jpg", aspect: 0.781, label: "Peugeot Profesional" },
-  { file: "take2-borderlands.jpg",              aspect: 1,      label: "Take2 Borderlands" },
+  { file: "ok/take2-borderlands.jpg",                                                                          aspect: 0.5, label: "Take 2 — Borderlands" },
+  { file: "ok/300x600-generalopticas.jpg",                                                                     aspect: 0.5, label: "General Óptica" },
+  { file: "ok/300x600-paradores.jpg",                                                                          aspect: 0.5, label: "Paradores" },
+  { file: "ok/300x600-paradoresweej.jpg",                                                                      aspect: 0.5, label: "Paradores Week" },
+  { file: "ok/300x600pfizer.jpg",                                                                              aspect: 0.5, label: "Pfizer" },
+  { file: "ok/300x600-sanitas-amazon.jpg",                                                                     aspect: 0.5, label: "Sanitas" },
+  { file: "ok/300x600-Babybel.jpg",                                                                            aspect: 0.5, label: "Babybel" },
+  { file: "ok/300x600-AceitesdeOliva-China.jpg",                                                               aspect: 0.5, label: "Aceites de Oliva" },
+  { file: "ok/300x600-LaVacaQueRie.jpg",                                                                       aspect: 0.5, label: "La Vaca que Ríe" },
+  { file: "ok/300x600-RiberaDelDuero.jpg",                                                                     aspect: 0.5, label: "Ribera del Duero" },
+  { file: "ok/300x600-citroen-SuvC5.jpg",                                                                      aspect: 0.5, label: "Citroën C5" },
+  { file: "ok/300x600-Tous-DocumentalOso.gif",                                                                 aspect: 0.5, label: "Tous" },
+  { file: "ok/300x600-DiasC-Citroen.gif",                                                                      aspect: 0.5, label: "Citroën" },
+  { file: "ok/300x600-citroen-C5Hybrid.gif",                                                                   aspect: 0.5, label: "Citroën C5 Hybrid" },
+  { file: "ok/300x600-ouigo-madrid-barcelona.jpg",                                                             aspect: 0.5, label: "Ouigo" },
+  { file: "ok/300x600-ouigo-BCN-madrid.jpg",                                                                   aspect: 0.5, label: "Ouigo" },
+  { file: "ok/300x600-citroen-dic2020-porserbuenos.gif",                                                       aspect: 0.5, label: "Citroën" },
+  { file: "ok/300x600-Saforelle-Gama-07092022.jpg",                                                            aspect: 0.5, label: "Saforelle" },
+  { file: "ok/300x600-Occident-NewBrand.jpg",                                                                   aspect: 0.5, label: "Occident" },
+  { file: "ok/300x600-Michelin-CrossClimate.jpg",                                                              aspect: 0.5, label: "Michelin CrossClimate" },
+  { file: "ok/300x600-ouigo-navidad22.jpg",                                                                    aspect: 0.5, label: "Ouigo Navidad" },
+  { file: "ok/300x600-TurismoAndalucia-Cordoba.jpg",                                                           aspect: 0.5, label: "Turismo Andalucía — Córdoba" },
+  { file: "ok/300x600-TurismoAndalucia-Jaen.jpg",                                                              aspect: 0.5, label: "Turismo Andalucía — Jaén" },
+  { file: "ok/300x600-TurismoAndalucia-Granada.jpg",                                                           aspect: 0.5, label: "Turismo Andalucía — Granada" },
+  { file: "ok/300x600-TurismoAndalucia-Lorca.jpg",                                                             aspect: 0.5, label: "Turismo Andalucía — Lorca" },
+  { file: "ok/300x600-TurismoAndalucia-PabloPicasso.jpg",                                                      aspect: 0.5, label: "Turismo Andalucía — Picasso" },
+  { file: "ok/300x600-TurismoAndalucia-PacodeLucia.jpg",                                                       aspect: 0.5, label: "Turismo Andalucía — Paco de Lucía" },
+  { file: "ok/300x600-Paradores-Territorios-ArteyPatrimonio.jpg",                                              aspect: 0.5, label: "Paradores — Arte y Patrimonio" },
+  { file: "ok/300x600-Paradores-Territorios-Cicloturismo.jpg",                                                 aspect: 0.5, label: "Paradores — Cicloturismo" },
+  { file: "ok/300x600-Paradores-Territorios-Gastronomia.jpg",                                                  aspect: 0.5, label: "Paradores — Gastronomía" },
+  { file: "ok/300x600-Paradores-Territorios-Sostenibilidad.jpg",                                               aspect: 0.5, label: "Paradores — Sostenibilidad" },
+  { file: "ok/300x600-citroen-C3Origin-30012024.jpg",                                                          aspect: 0.5, label: "Citroën C3 Origin" },
+  { file: "ok/300x600-citroen-berlingo.jpg",                                                                   aspect: 0.5, label: "Citroën Berlingo" },
+  { file: "ok/Paradores_Primavera_marzo24_300x600.jpg",                                                        aspect: 0.5, label: "Paradores Primavera" },
+  { file: "ok/300x600-movistar-2reproducciones-tabletymovil.jpg",                                              aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-2reproducciones-amor.jpg",                                                      aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-2reproducciones-futbolycine.jpg",                                               aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-sininstalacion-sinestres.jpg",                                                   aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-sininstalacion-wifi.jpg",                                                       aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-sininstalacion-sincables.jpg",                                                   aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-citroen-GamaSUV.jpg",                                                                    aspect: 0.5, label: "Citroën Gama SUV" },
+  { file: "ok/300x600-mango-boglioli-1.jpg",                                                                   aspect: 0.5, label: "Mango × Boglioli" },
+  { file: "ok/300x600-mango-boglioli-2.jpg",                                                                   aspect: 0.5, label: "Mango × Boglioli" },
+  { file: "ok/300x600-OUIGO-Promo61-Junio24.jpg",                                                             aspect: 0.5, label: "Ouigo" },
+  { file: "ok/300x600-Paradores-AlwaysOn-Junio2024-BRANDING.jpg",                                             aspect: 0.5, label: "Paradores" },
+  { file: "ok/300x600-michelin-pilotsport.jpg",                                                                aspect: 0.5, label: "Michelin Pilot Sport" },
+  { file: "ok/michelin-PS5-300x600-es.jpg",                                                                    aspect: 0.5, label: "Michelin PS5" },
+  { file: "ok/300x600-granvalira-2024.jpg",                                                                    aspect: 0.5, label: "Grandvalira" },
+  { file: "ok/300x600-movistar-muertos.gif",                                                                   aspect: 0.5, label: "Movistar" },
+  { file: "ok/ACTIVIA-enero2025-300x600-melocoton.jpg",                                                       aspect: 0.5, label: "Activia" },
+  { file: "ok/300x600-los40classic-cinta-expandido.jpg",                                                       aspect: 0.5, label: "Los 40 Classic" },
+  { file: "ok/300x600-cadenaser-premiosdial.png",                                                              aspect: 0.5, label: "Cadena SER" },
+  { file: "ok/300x600-movistar-lavidabreve.jpg",                                                               aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-citroen-nuevosuvc3aircross.gif",                                                         aspect: 0.5, label: "Citroën C3 Aircross" },
+  { file: "ok/300x600-movistar-copadelrey.jpg",                                                                aspect: 0.5, label: "Movistar Copa del Rey" },
+  { file: "ok/300x600-movistar-champions-rmcity.gif",                                                          aspect: 0.5, label: "Movistar Champions" },
+  { file: "ok/OUIGO-ODV-Levante-IPAlicante-Generico-300x600.gif",                                             aspect: 0.5, label: "Ouigo" },
+  { file: "ok/300x600-paradores-primavera25.jpg",                                                              aspect: 0.5, label: "Paradores Primavera" },
+  { file: "ok/300x600-ouigo-verano-video.jpg",                                                                 aspect: 0.5, label: "Ouigo Verano" },
+  { file: "ok/300x600-Citroen-DiasCitroen-Mayo2025.gif",                                                      aspect: 0.5, label: "Citroën" },
+  { file: "ok/300x600-michelin-longroad.jpg",                                                                  aspect: 0.5, label: "Michelin Long Road" },
+  { file: "ok/300x600-citroen-AMIbuggy.jpg",                                                                   aspect: 0.5, label: "Citroën AMI Buggy" },
+  { file: "ok/300x600-Paradores-Verano-JUL25.gif",                                                            aspect: 0.5, label: "Paradores Verano" },
+  { file: "ok/300x600-Movistar-Hypermotion.gif",                                                               aspect: 0.5, label: "Movistar Hypermotion" },
+  { file: "ok/300x600-Sanitas-Dental-0825.gif",                                                                aspect: 0.5, label: "Sanitas Dental" },
+  { file: "ok/300x600-Paradores-Norte-Sep25-OCT.gif",                                                         aspect: 0.5, label: "Paradores Norte" },
+  { file: "ok/300x600-Iberdrola-Planazo-EmpresaBidea.gif",                                                    aspect: 0.5, label: "Iberdrola" },
+  { file: "ok/300x600-movistar-variedad-2.jpg",                                                               aspect: 0.5, label: "Movistar" },
+  { file: "ok/ES_EST_SANITAS_SEGUROS-SALUD_CAMBIATE24_ACCEDEYAVANZA_20241001_DOBLEROBAPAGINAS_300X600.jpg",   aspect: 0.5, label: "Sanitas" },
+  { file: "ok/300x600-Sanitas-Seguros-2.jpg",                                                                  aspect: 0.5, label: "Sanitas" },
+  { file: "ok/300x600-Sanitas-Seguros-1.jpg",                                                                  aspect: 0.5, label: "Sanitas" },
+  { file: "ok/300x600-Sanitas-Cambiate-Autonomos.jpg",                                                         aspect: 0.5, label: "Sanitas — Autónomos" },
+  { file: "ok/300x600-Sanitas-Cambiate-Familias.jpg",                                                          aspect: 0.5, label: "Sanitas — Familias" },
+  { file: "ok/paradores-blackfriday2025-300x600.gif",                                                          aspect: 0.5, label: "Paradores Black Friday" },
+  { file: "ok/paradores-cybermonday2025-300x600.gif",                                                          aspect: 0.5, label: "Paradores Cyber Monday" },
+  { file: "ok/300x600-finetwork.gif",                                                                          aspect: 0.5, label: "Finetwork" },
+  { file: "ok/300x600-finetwork-convergente-0226.gif",                                                         aspect: 0.5, label: "Finetwork" },
+  { file: "ok/300x600-finetwork-convergente-0226.png",                                                         aspect: 0.5, label: "Finetwork" },
+  { file: "ok/300x600-movistar-losdomingos.jpg",                                                               aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-setienequemorirmuchagente.jpg",                                                  aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-Movistar-champions.jpg",                                                                  aspect: 0.5, label: "Movistar Champions" },
+  { file: "ok/300x600-movistaer.jpg",                                                                          aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-movistar-variedad.jpg",                                                                   aspect: 0.5, label: "Movistar" },
+  { file: "ok/300x600-backup.gif",                                                                             aspect: 0.5, label: "Ouigo" },
 ];
 
 const N = CAMPAIGNS.length; // 31
@@ -130,7 +183,7 @@ function BannerRow({ rowCampaigns, config, allTextures, isPausedRef, onHover }: 
   const groupRef  = useRef<THREE.Group>(null);
   const doubled   = useMemo(() => [...rowCampaigns, ...rowCampaigns], [rowCampaigns]);
   const trackW    = rowCampaigns.length * config.xSpacing;
-  const H         = 5.4; // banner height in world units — large and clear
+  const H         = 6; // banner height in world units — large and clear
 
   useFrame((_, delta) => {
     if (isPausedRef.current || !groupRef.current) return;
@@ -179,10 +232,10 @@ function Scene({ isPausedRef, onHover }: SceneProps) {
   return (
     <>
       {/* Depth fade — banners float into void */}
-      <fog attach="fog" args={["#09090b", 26, 62]} />
+      <fog attach="fog" args={["#09090b", 1, 62]} />
 
       {/* Grid — pure lines, no fill. Canvas is alpha:true so page bg shows through */}
-      <gridHelper args={[100, 48, "#1c1c22", "#131318"]} position={[0, -1.3, -18]} />
+      <gridHelper args={[100, 48, "#1c1c22", "#131318"]} position={[0, -3.5, -18]} />
 
       {/* Banner rows */}
       {ROW_CAMPAIGNS.map((rowCampaigns, rowIndex) => (
@@ -383,7 +436,7 @@ export default function CampaignsSection() {
       <div style={{ maxWidth:1600, margin:"0 auto", paddingTop:20 }}>
         <div style={{ borderTop:"1px solid var(--zinc-800)", paddingTop:16, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
           <span className="mono" style={{ fontSize:10, letterSpacing:"0.16em", color:"var(--zinc-700)" }}>
-            STREAM / {N} ASSETS ARCHIVED · {ROW_CAMPAIGNS.length} PARALLEL TRACKS · AUTO-SCROLL
+            STREAM / {N} ASSETS ARCHIVED · {ROW_CAMPAIGNS.length} PARALLEL TRACKS · AUTO-SCROLL · ALL 300×600
           </span>
           <span className="mono" style={{ fontSize:10, letterSpacing:"0.16em", color:"var(--zinc-700)" }}>
             2008 — 2024

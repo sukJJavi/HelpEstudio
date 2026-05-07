@@ -354,12 +354,22 @@ export default function CampaignsSection() {
         <div aria-hidden style={{ position:"absolute", top:0, left:0, width:180, height:"100%", background:"linear-gradient(to right,#09090b,transparent)", zIndex:10, pointerEvents:"none" }} />
         <div aria-hidden style={{ position:"absolute", top:0, right:0, width:180, height:"100%", background:"linear-gradient(to left,#09090b,transparent)", zIndex:10, pointerEvents:"none" }} />
 
-        <div style={{ height:480, overflow:"hidden", position:"relative" }}>
+        <div
+          style={{ height:480, overflow:"hidden", position:"relative" }}
+          role="img"
+          aria-label="3D scrolling carousel of advertising campaigns delivered for Havas, Dentsu, Wunderman, Paradores, Citroën, Sanitas, Ouigo, Pfizer, Randstad and more"
+        >
+          <ul aria-hidden="false" className="sr-only">
+            {CAMPAIGNS.map((c) => (
+              <li key={c.file}>{c.label} — advertising campaign delivered by Help Estudio</li>
+            ))}
+          </ul>
           <Canvas
             camera={{ position:[0, 3.5, 13], fov:62, near:0.1, far:90 }}
             gl={{ antialias:true, alpha:true, powerPreference:"high-performance" }}
             dpr={[1, 1.5]}
             style={{ display:"block" }}
+            aria-hidden="true"
           >
             {/* No background color — canvas is transparent, page bg shows through */}
             <Suspense fallback={null}>

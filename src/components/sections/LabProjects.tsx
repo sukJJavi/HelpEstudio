@@ -169,7 +169,7 @@ function ImageCard({ project, isBento }: { project: Project; isBento: boolean })
       >
         <Image
           src={project.image}
-          alt={project.name}
+          alt={`${project.name} — ${project.tag} built by Help Estudio`}
           fill
           sizes={isLarge ? "66vw" : "33vw"}
           style={{ objectFit: "cover", objectPosition: project.id === "next3hours" ? "center 40%" : "top", transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
@@ -231,6 +231,7 @@ function ImageCard({ project, isBento }: { project: Project; isBento: boolean })
               href={project.href}
               target="_blank"
               rel="noreferrer"
+              aria-label={`Visit ${project.name} (opens in new tab)`}
               className="mono"
               style={{
                 fontSize: 11,

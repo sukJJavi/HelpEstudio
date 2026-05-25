@@ -61,15 +61,15 @@ const LAB_PROJECTS: Project[] = [
   {
     id: "next3hours",
     name: "Next3hours",
-    tag: "Real-time / Lifestyle",
-    desc: "What can you do right now, near you, in the next three hours? A hyper-local discovery engine that trades infinite scroll for immediate action. Real-time availability, zero friction.",
-    metric: { label: "RESPONSE TIME", value: "<80ms", trend: "P99 GLOBAL" },
+    tag: "Urban / Real-time Discovery",
+    desc: "A 3D city exploration engine that answers one question: what can you do right now, near you, in the next three hours? Renders a live aerial map of your city with geo-pinned events, venues and openings — no infinite scroll, no algorithm, just place and time.",
+    metric: { label: "RENDER MODE", value: "3D CITY", trend: "LIVE PINS" },
     status: "LIVE",
     color: "phosphor",
     span: "small",
     href: "https://next3hours.com",
-    image: "/assets/next3hours/next3hours2.png",
-    stack: ["Next.js", "TypeScript", "OpenAI", "Vercel"],
+    image: "/assets/next3hours/next3hours0.png",
+    stack: ["Next.js", "TypeScript", "Mapbox", "Vercel"],
   },
 ];
 
@@ -172,7 +172,7 @@ function ImageCard({ project, isBento }: { project: Project; isBento: boolean })
           alt={`${project.name} — ${project.tag} built by Help Estudio`}
           fill
           sizes={isLarge ? "66vw" : "33vw"}
-          style={{ objectFit: "cover", objectPosition: project.id === "next3hours" ? "center 40%" : "top", transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
+          style={{ objectFit: "cover", objectPosition: project.id === "next3hours" ? "center center" : "top", transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
           className="project-img"
         />
         <div

@@ -1,7 +1,7 @@
 export default function Footer() {
   const cols: { h: string; l: { label: string; href: string }[] }[] = [
     { h: "STUDIO",   l: [{ label: "Lab", href: "#lab" }, { label: "Craft", href: "#craft" }, { label: "Pedigree", href: "#pedigree" }, { label: "Process", href: "#process" }, { label: "Contact", href: "#contact" }] },
-    { h: "PRODUCTS", l: [{ label: "Donemeter", href: "https://donemeter.com" }, { label: "Smashzone", href: "https://smashzone.app" }, { label: "Motorland.io", href: "https://motorland.io" }, { label: "Next3hours", href: "https://next3hours.com" }] },
+    { h: "PRODUCTS", l: [{ label: "Next3hours", href: "https://next3hours.com" }, { label: "Smashzone", href: "https://smashzone.app" }, { label: "Motorland.io", href: "https://motorland.io" }] },
     { h: "CONTACT",  l: [{ label: "javi@help-estudio.es", href: "mailto:javi@help-estudio.es" }, { label: "@jjavierblanco", href: "https://x.com/jjavierblanco" }, { label: "LinkedIn / jjavierblanco", href: "https://www.linkedin.com/in/jjavierblanco" }] },
   ];
 

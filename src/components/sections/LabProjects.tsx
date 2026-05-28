@@ -20,17 +20,17 @@ type Project = {
 
 const LAB_PROJECTS: Project[] = [
   {
-    id: "donemeter",
-    name: "Donemeter",
-    tag: "Productivity / SaaS",
-    desc: "Not another todo app. Donemeter scores the quality of your work, not the quantity. Built for makers who donate a slice of revenue to causes they believe in — transparency as a product feature.",
-    metric: { label: "STATUS", value: "LIVE", trend: "SHIPPING" },
+    id: "next3hours",
+    name: "Next3hours",
+    tag: "Hospitality / AI Concierge",
+    desc: "White-label AI concierge for boutique hotels. Guests answer three questions; six chained AI agents craft a bespoke afternoon in the city — real venues, timed routes, gamified missions, redeemable rewards — all written in the hotel's own editorial voice. Live in Madrid.",
+    metric: { label: "DELIVERY", value: "WHITE-LABEL", trend: "6 AI AGENTS" },
     status: "LIVE",
     color: "phosphor",
     span: "large",
-    href: "https://donemeter.com",
-    image: "/assets/donemeter/donemeter1.png",
-    stack: ["Next.js", "TypeScript", "Supabase", "Stripe"],
+    href: "https://next3hours.com",
+    image: "/assets/next3hours/next3hours-ok.png",
+    stack: ["Next.js", "TypeScript", "Mapbox", "Gemini", "Vercel"],
   },
   {
     id: "smashzone",
@@ -57,19 +57,6 @@ const LAB_PROJECTS: Project[] = [
     href: "https://motorland.io",
     image: "/assets/motorlandio/motorlandio1.png",
     stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-  },
-  {
-    id: "next3hours",
-    name: "Next3hours",
-    tag: "Urban / Real-time Discovery",
-    desc: "A 3D city exploration engine that answers one question: what can you do right now, near you, in the next three hours? Renders a live aerial map of your city with geo-pinned events, venues and openings — no infinite scroll, no algorithm, just place and time.",
-    metric: { label: "RENDER MODE", value: "3D CITY", trend: "LIVE PINS" },
-    status: "LIVE",
-    color: "phosphor",
-    span: "small",
-    href: "https://next3hours.com",
-    image: "/assets/next3hours/next3hours0.png",
-    stack: ["Next.js", "TypeScript", "Mapbox", "Vercel"],
   },
 ];
 
@@ -121,11 +108,11 @@ function ImageCard({ project, isBento }: { project: Project; isBento: boolean })
   const isMed = project.span === "med";
 
   const minH = isBento
-    ? (isLarge ? 540 : isMed ? 340 : project.id === "next3hours" ? 360 : 280)
+    ? (isLarge ? 540 : isMed ? 340 : 280)
     : 360;
 
   const imgMinH = isBento
-    ? (isLarge ? 260 : project.id === "next3hours" ? 200 : 140)
+    ? (isLarge ? 260 : 140)
     : 200;
 
   return (
@@ -172,7 +159,7 @@ function ImageCard({ project, isBento }: { project: Project; isBento: boolean })
           alt={`${project.name} — ${project.tag} built by Help Estudio`}
           fill
           sizes={isLarge ? "66vw" : "33vw"}
-          style={{ objectFit: "cover", objectPosition: project.id === "next3hours" ? "center center" : "top", transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
+          style={{ objectFit: "cover", objectPosition: "top", transition: "transform 0.6s cubic-bezier(0.22,1,0.36,1)" }}
           className="project-img"
         />
         <div
@@ -288,9 +275,8 @@ function ImageCard({ project, isBento }: { project: Project; isBento: boolean })
 
 export default function TheLab() {
   const gridTemplate = `
-    "donemeter donemeter smashzone"
-    "donemeter donemeter motorlandio"
-    "next3hours next3hours next3hours"
+    "next3hours next3hours smashzone"
+    "next3hours next3hours motorlandio"
   `;
 
   return (
@@ -334,9 +320,9 @@ export default function TheLab() {
               </h2>
             </div>
             <div style={{ display: "flex", gap: 8, fontFamily: "var(--mono)", fontSize: 11, color: "var(--zinc-500)", letterSpacing: "0.14em" }}>
-              <span>04 PRODUCTS</span>
+              <span>03 PRODUCTS</span>
               <span style={{ opacity: 0.4 }}>·</span>
-              <span style={{ color: "var(--phosphor)" }}>04 LIVE</span>
+              <span style={{ color: "var(--phosphor)" }}>03 LIVE</span>
             </div>
           </motion.div>
 
